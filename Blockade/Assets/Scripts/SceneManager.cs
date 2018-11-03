@@ -4,19 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Application = UnityEngine.Application;
 
-public class scr : MonoBehaviour {
-    
+public class Scenes : MonoBehaviour {
 	// This code is what we will change when something triggers a lose state
 	public PlayerControl player1;
 	public PlayerControl player2;
 	
 	// Stores a string to be used in the gave over screen
-	private string gameover;
+	public string gameover = "";
 
 	// Use this for initialization
 	void Start ()
 	{
-		gameover = "";
+		
 	}
     
 

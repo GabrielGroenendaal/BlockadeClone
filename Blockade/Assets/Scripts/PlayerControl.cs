@@ -26,7 +26,9 @@ public class PlayerControl : MonoBehaviour {
 	
 	public GameController grid;
 	
-	
+	public float targetTime = .5f;
+ 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -36,110 +38,113 @@ public class PlayerControl : MonoBehaviour {
 	// This code manages the storing of input values and calls upon the arrow() method to place the arrow down
 	void Update () {
 		
-		if (Input.GetKeyDown(downInput) && previousInput!=downInput)
+		targetTime -= Time.deltaTime;
+		
+		if (Input.GetKeyDown(downInput) && previousInput!=upInput)
 		{
 			input = downInput;
 			arrow(down,Xpos,Ypos-1);
 		}
-		else if (Input.GetKeyDown(upInput) && previousInput!=upInput)
+		else if (Input.GetKeyDown(upInput) && previousInput!=downInput)
 		{
 			input = upInput;
 			arrow(up,Xpos,Ypos+1);
 		}
-		else if (Input.GetKeyDown(rightInput) && previousInput!=rightInput)
+		else if (Input.GetKeyDown(rightInput) && previousInput!=leftInput)
 		{
 			input = rightInput;
 			arrow(right,Xpos+1,Ypos);
 		}
-		else if (Input.GetKeyDown(leftInput) && previousInput!=leftInput)
+		else if (Input.GetKeyDown(leftInput) && previousInput!=rightInput)
 		{
 			input = leftInput;
 			arrow(left,Xpos-1,Ypos);
 		}
+		
+		// Now this code will check the inputs every second and move the pieces accordingly
+		if (targetTime <= 0.0f)
+		{
+			targetTime = .5f;
+			if (input == downInput)
+			{
+				if (grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite != empty && grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite != down)
+				{
+					score = score - 1;
+					grid.BuildBoard();
+				}
+				else
+				{
+					grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite = happy;
+					grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
+					arrowXpos = 0; arrowYpos = 0;
+					arrow(down,Xpos,Ypos-2);
+					previousInput = input;
+					Ypos = Ypos - 1;
+				}
+			}
+		
+			else if (input == upInput)
+			{
+				if (grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite != empty && grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite != up)
+				{
+					score = score - 1;
+					grid.BuildBoard();
+				}
+				else
+				{
+					grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite = happy;
+					grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
+					arrowXpos = 0; arrowYpos = 0;
+					arrow(up,Xpos,Ypos+2);
+					previousInput = input;
+					Ypos = Ypos + 1;
+				}
+			}
+			
+			else if (input == leftInput)
+			{
+				if (grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite != empty && grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite != left)
+				{
+					score = score - 1;
+					grid.BuildBoard();
+				}
+				else
+				{
+					grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite = happy;
+					grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite = body;
+					arrowXpos = 0; arrowYpos = 0;
+					arrow(left,Xpos-2,Ypos);
+					previousInput = input;
+					Xpos = Xpos - 1;
+				}
+			}
+			
+			else if (input == rightInput)
+			{
+				if (grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite != empty && grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite != right)
+				{
+					score = score - 1;
+					grid.BuildBoard();
+				}
+				else
+				{
+					grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite = happy;
+					grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
+					arrowXpos = 0; arrowYpos = 0;
+					arrow(right,Xpos+2,Ypos);
+					previousInput = input;
+					Xpos = Xpos + 1;
+				}
+			}
+			setCountText(); // updates the count text.
+			}
 	}
 	
-	
-	// FixedUpdate will manage the 1 second changes in position.
-	void FixedUpdate()
-	{
-		if (input == downInput)
-		{
-			if (grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite != empty && grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite != down)
-			{
-				score--;
-				// Reset the arrowXpos arrowXpos = null;
-				// Reset the arrowYpos arrowYpos = null;
-				previousInput = input;
-				grid.BuildBasicBoard();
-			}
-			else
-			{
-				grid.board[Xpos, Ypos - 1].GetComponent<Image>().sprite = happy;
-				grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
-				Ypos--;
-			}
-		}
-		
-		else if (input == upInput)
-		{
-			if (grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite != empty && grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite != up)
-			{
-				score--;
-				// Reset the arrowXpos arrowXpos = null;
-				// Reset the arrowYpos arrowYpos = null;
-				previousInput = input;
-				grid.BuildBasicBoard();
-			}
-			else
-			{
-				grid.board[Xpos, Ypos + 1].GetComponent<Image>().sprite = happy;
-				grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
-				Ypos++;
-			}
-		}
-		
-		else if (input == leftInput)
-		{
-			if (grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite != empty && grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite != left)
-			{
-				score--;
-				// Reset the arrowXpos arrowXpos = null;
-				// Reset the arrowYpos arrowYpos = null;
-				previousInput = input;
-				grid.BuildBasicBoard();
-			}
-			else
-			{
-				grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite = happy;
-				grid.board[Xpos - 1, Ypos].GetComponent<Image>().sprite = body;
-				Xpos--;
-			}
-		}
-		
-		else if (input == rightInput)
-		{
-			if (grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite != empty && grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite != right)
-			{
-				score--;
-				// Reset the arrowXpos arrowXpos = null;
-				// Reset the arrowYpos arrowYpos = null;
-				previousInput = input;
-				grid.BuildBasicBoard();
-			}
-			else
-			{
-				grid.board[Xpos + 1, Ypos].GetComponent<Image>().sprite = happy;
-				grid.board[Xpos, Ypos].GetComponent<Image>().sprite = body;
-				Xpos++;
-			}
-		}
-		setCountText(); // updates the count text.
-	}
 	
 	// This code determines where the arrow tokens are placed, only on empty tiles, while storing the position the previous arrow location to clear it
 	void arrow(Sprite d, int x, int y)
 	{
-		if (arrowXpos != null)
+		if (arrowXpos != 0)
 		{
 			grid.board[arrowXpos, arrowYpos].GetComponent<Image>().sprite = empty;
 		}
@@ -168,6 +173,21 @@ public class PlayerControl : MonoBehaviour {
 	{
 		score = j;
 	}
+
+	public void setInput(KeyCode k)
+	{
+		previousInput = k;
+		input = k;
+
+		if (k == upInput)
+		{
+			arrow(up, Xpos, Ypos + 1);
+		}
+
+		if (k == downInput) {
+			arrow(down, Xpos, Ypos-1);
+		}
+}	
 
 	public int getScore()
 	{
