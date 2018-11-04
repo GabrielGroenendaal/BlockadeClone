@@ -40,17 +40,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happy: {fileID: 21300000, guid: 4eaf503f0a6baaf4bb900fa3d71ece33, type: 3}
   body: {fileID: 21300000, guid: 46934dc3c00b6714d9f6c30960003f25, type: 3}
+  unhappy: {fileID: 21300000, guid: b458c5deb800ba8419261da779125a64, type: 3}
   up: {fileID: 21300000, guid: 4e074762038b5da47954b5f1b65c6222, type: 3}
   down: {fileID: 21300000, guid: 5c3918bbe0f0f294f87164204948be44, type: 3}
   left: {fileID: 21300000, guid: a707c2067eb60bd4bb174f31b170336f, type: 3}
   right: {fileID: 21300000, guid: 042ae5f448f48a648aaf09d6229bbcef, type: 3}
-  upInput: 119
-  downInput: 115
-  rightInput: 100
-  leftInput: 97
   empty: {fileID: 21300000, guid: bf875c133873dc9438045cf41a843439, type: 3}
+  upInput: 273
+  downInput: 274
+  rightInput: 275
+  leftInput: 276
   countText: {fileID: 0}
   grid: {fileID: 0}
+  targetTime: 0.5
 --- !u!224 &224857141910148230
 RectTransform:
   m_ObjectHideFlags: 1

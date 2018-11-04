@@ -53,4 +53,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  gameover: 
+  winningPlayerName: 
+  losingPlayerName: 
+  winningPlayer: {fileID: 0}
+  losingPlayer: {fileID: 0}
+  winningPlayerHead: {fileID: 0}
+  winningPlayerHead2: {fileID: 0}
+  losingPlayerHead: {fileID: 0}
+  playerVictory: {fileID: 0}
+  playerLoss: {fileID: 0}

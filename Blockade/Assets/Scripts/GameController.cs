@@ -5,22 +5,27 @@ using UnityEngine;
 using UnityEngine.Networking.NetworkSystem;
 using UnityEngine.UI;
 
+// This code is used to create and store a grid gameboard comprised of various UI panels while providing them gameplay functionality
+// These notes will walk you through exactly how that is accomplished.
+
 public class GameController : MonoBehaviour {
 	
-	// This holds the tile objects that comprise the board. This baseline is preserved as the entire board resets when Someone takes damage.
+	// This two dimensional array stores the BASELINE version of the gameboard, with all the tiles set to 'empty' and the border tiles intact.
+	// This board is stored for safekeeping for when we need to reinitialize the game during a "reset"
 	public GameObject[,] board_base = new GameObject[20,16];
 	
-	// This multidimensional stores the updated board that is reset with each round. 
+	// This multidimensional array stores the updated board that actually utilized during play. This is reset with each round. 
 	public GameObject[,] board = new GameObject[20,16];
 	
-	// This is where we will store the player objects
+	// These variables store references to the two Player GameObjects, allowing it to access their public methods 
 	public PlayerControl player_one;
 	public PlayerControl player_two;
 
-	// This code is to reference the player art assets
+	// These variables store references to sprites used to initialize the game board
 	public Sprite player1; 
 	public Sprite player2;
 	public Sprite empty;
+	public AudioSource beep;
 	
 	// This code is to manage the Score Text
 	public Text player1score;
@@ -29,16 +34,19 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization of the game. It sets the players scores and sets up the basic board that will be used
 	void Start ()
 	{
-		player_one.setScore(5);  
-		player_two.setScore(5);
+		player_one.setScore(0);  
+		player_two.setScore(0);
+		player_one.setCountText();
+		player_two.setCountText();
 		BuildBaseBoard();
 		BuildBoard();
 	}
 	
 	// This timer will be to fade the text out
-	public float targetTime = 1.3f;
+	public float targetTime = 2.0f;
 	
 	// Update is called once per frame
+	// It is mostly used to set a timer on how long the score is set up
 	void Update () {
 		targetTime -= Time.deltaTime;
 		if (targetTime <= 0.0f)
@@ -48,9 +56,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	// This code will populate the 20 x 16 array with the contents of the board_base array, forming the game grid
-	// This code will be called at the start of the game and whenever they need to reset the game
-
+	// This code will populate the "board_base" array that will be used to form the instantiated arrays going forward
 	public void BuildBaseBoard()
 	{
 		int count = 1;
@@ -66,6 +72,8 @@ public class GameController : MonoBehaviour {
 		}
 	}
 	
+	// This code will populate the 20 x 16 array with the contents of the board_base array, forming the game grid
+	// This code will be called at the start of the game and whenever they need to reset the game
 	public void BuildBoard()
 	{
 		for (int i = 0; i < 16; i++)
@@ -77,6 +85,7 @@ public class GameController : MonoBehaviour {
 			}
 		}
 		
+		// Just a double check to make sure everything is empty
 		for (int i = 1; i < 15; i++)
 		{
 			for (int k = 1; k < 19; k++)
@@ -85,21 +94,26 @@ public class GameController : MonoBehaviour {
 			}
 		}
 		
-		// We then set the positions of the players
-		board[5, 11].GetComponent<Image>().sprite = player1;
-		board[14, 5].GetComponent<Image>().sprite = player2;
-		player_one.setPosition(5, 11);
-		player_two.setPosition(14, 5);
+		// We then set the positions of the players and set their inputs to the default position
+		board[4, 10].GetComponent<Image>().sprite = player1;
+		board[15, 4].GetComponent<Image>().sprite = player2;
+		player_one.setPosition(4, 10);
+		player_two.setPosition(15, 4);
 		player_one.setInput(player_one.downInput);
 		player_two.setInput(player_two.upInput);
 		
-		// And pass them the board to do movement
+		// We then pass each player the updated gridobject 
 		player_one.grid = this;
 		player_two.grid = this;
 		
+		// And finally we reset all the timers for the players
+		// These timers determine how long the first "beat" takes, and how long the score stays up
 		player1score.enabled = true;
 		player2score.enabled = true;
-		targetTime = 1.3f;
+		player_one.targetTime = 2.0f;
+		player_two.targetTime = 2.0f;
+		targetTime = 2.0f;
+		beep.Play(0);
 	}
 	
 	
