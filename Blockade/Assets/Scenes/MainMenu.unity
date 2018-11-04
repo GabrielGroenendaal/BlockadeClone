@@ -16364,7 +16364,7 @@ GameObject:
   - component: {fileID: 1363250826}
   - component: {fileID: 1363250825}
   m_Layer: 5
-  m_Name: Player 1 Panel (1)
+  m_Name: Rules Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
