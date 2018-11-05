@@ -2028,7 +2028,7 @@ GameObject:
   - component: {fileID: 185752326}
   - component: {fileID: 185752328}
   - component: {fileID: 185752327}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,10 +2048,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -253.99, y: -31}
-  m_SizeDelta: {x: 251.72, y: 59.7}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -253.99, y: 329}
+  m_SizeDelta: {x: 251.71997, y: 59.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185752327
 MonoBehaviour:
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 250339558}
   - component: {fileID: 250339560}
   - component: {fileID: 250339559}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Rules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2882,10 +2882,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -91}
-  m_SizeDelta: {x: 206.4, y: 208.7}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1, y: 269}
+  m_SizeDelta: {x: 206.40002, y: 208.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250339559
 MonoBehaviour:
@@ -3835,7 +3835,7 @@ GameObject:
   - component: {fileID: 347685030}
   - component: {fileID: 347685032}
   - component: {fileID: 347685031}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3855,10 +3855,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08777779, y: 0}
-  m_AnchorMax: {x: 1, y: 0.88600004}
-  m_AnchoredPosition: {x: -38.5, y: 261.03995}
-  m_SizeDelta: {x: -77, y: -516.1}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0.99993896, y: 580.04}
+  m_SizeDelta: {x: 744, y: 121.900024}
   m_Pivot: {x: 0.49999994, y: 0.50000006}
 --- !u!114 &347685031
 MonoBehaviour:
@@ -4220,7 +4220,7 @@ GameObject:
   - component: {fileID: 374843364}
   - component: {fileID: 374843366}
   - component: {fileID: 374843365}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 1 Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4240,10 +4240,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -255.98999, y: 77.900024}
-  m_SizeDelta: {x: -787, y: -614.9}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -255.98999, y: 437.90002}
+  m_SizeDelta: {x: 113, y: 105.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374843365
 MonoBehaviour:
@@ -5393,12 +5393,12 @@ GameObject:
   - component: {fileID: 497608813}
   - component: {fileID: 497608815}
   - component: {fileID: 497608814}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 1 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &497608813
 RectTransform:
@@ -5413,10 +5413,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -254, y: -91}
-  m_SizeDelta: {x: -648.3, y: -511.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -254, y: 269}
+  m_SizeDelta: {x: 251.70001, y: 208.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497608814
 MonoBehaviour:
@@ -6986,7 +6986,7 @@ GameObject:
   - component: {fileID: 624164103}
   - component: {fileID: 624164105}
   - component: {fileID: 624164104}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: P2 Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7006,10 +7006,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.25, y: -115}
-  m_SizeDelta: {x: 246.5, y: 84.7}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 260.25, y: 245}
+  m_SizeDelta: {x: 246.5, y: 84.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624164104
 MonoBehaviour:
@@ -7061,7 +7061,7 @@ GameObject:
   - component: {fileID: 632035037}
   - component: {fileID: 632035039}
   - component: {fileID: 632035038}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7081,10 +7081,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.25, y: -29.647}
-  m_SizeDelta: {x: 246.5, y: 59.295}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 260.25, y: 330.353}
+  m_SizeDelta: {x: 246.5, y: 59.294983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632035038
 MonoBehaviour:
@@ -7895,7 +7895,7 @@ GameObject:
   - component: {fileID: 677950744}
   - component: {fileID: 677950746}
   - component: {fileID: 677950745}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text to Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7915,10 +7915,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000005722, y: -264}
-  m_SizeDelta: {x: 644.6, y: 59.8}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 96}
+  m_SizeDelta: {x: 644.6, y: 59.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677950745
 MonoBehaviour:
@@ -10728,7 +10728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 918563807}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14833,7 +14833,7 @@ GameObject:
   - component: {fileID: 1208078196}
   - component: {fileID: 1208078198}
   - component: {fileID: 1208078197}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: P1 Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14853,10 +14853,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254, y: -115}
-  m_SizeDelta: {x: 251.7, y: 90.4}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -254, y: 245}
+  m_SizeDelta: {x: 251.70001, y: 90.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208078197
 MonoBehaviour:
@@ -16363,7 +16363,7 @@ GameObject:
   - component: {fileID: 1363250824}
   - component: {fileID: 1363250826}
   - component: {fileID: 1363250825}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Rules Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16383,10 +16383,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -91}
-  m_SizeDelta: {x: -693.6, y: -511.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1, y: 269}
+  m_SizeDelta: {x: 206.40002, y: 208.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363250825
 MonoBehaviour:
@@ -17674,7 +17674,7 @@ GameObject:
   - component: {fileID: 1466444720}
   - component: {fileID: 1466444722}
   - component: {fileID: 1466444721}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 2 Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17694,10 +17694,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 257.64996, y: 77.900024}
-  m_SizeDelta: {x: -787, y: -614.9}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 257.64996, y: 437.90002}
+  m_SizeDelta: {x: 113, y: 105.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466444721
 MonoBehaviour:
@@ -22045,7 +22045,7 @@ GameObject:
   - component: {fileID: 1917040615}
   - component: {fileID: 1917040617}
   - component: {fileID: 1917040616}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Player 2 Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22065,10 +22065,10 @@ RectTransform:
   m_Father: {fileID: 2090827808}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 260.25, y: -91}
-  m_SizeDelta: {x: -648.2999, y: -511.3}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 260.25, y: 269}
+  m_SizeDelta: {x: 251.70007, y: 208.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917040616
 MonoBehaviour:
